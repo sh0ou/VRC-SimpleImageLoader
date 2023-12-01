@@ -1,0 +1,20 @@
+{
+  "name": "jp.sh0uroom.imageloader",
+  "displayName": "SimpleImageLoader",
+  "version": "1.0.0",
+  "description": "Tools to load images from URLs.",
+  "gitDependencies": {},
+  "vpmDependencies": {
+    "com.vrchat.worlds": "3.4.1"
+  },
+  "author": {
+    "name": "sh0u",
+    "email": "47475540+sh0ou@users.noreply.github.com",
+    "url": "sh0u.jp"
+  },
+  "legacyFolders": {},
+  "legacyFiles": {},
+  "type": "tool",
+  "unity": "2019.4",
+  "hideInEditor": false
+}
