@@ -1,0 +1,10 @@
+各種不具合報告はGithub上のIssue機能で受け付けています。
+https://github.com/sh0ou/VRC-SimpleImageLoader/issues
+
+v1.0.0
+初期版
+
+v1.0.1
+Inspector表示部分をEditorフォルダ内にスクリプトを分割
+[ImageLoader]状態出力スクリプトが設定されてない時にエラーが発生する問題の修正
+Unity2022.3 の互換性を確認

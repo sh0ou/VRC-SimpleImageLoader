@@ -1,7 +1,7 @@
 {
   "name": "jp.sh0uroom.imageloader",
   "displayName": "SimpleImageLoader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tools to load images from URLs.",
   "gitDependencies": {},
   "vpmDependencies": {
