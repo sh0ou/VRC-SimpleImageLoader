@@ -14,9 +14,8 @@ namespace sh0uRoom.VRCSIL
     /// </summary>
     public class ImageURLInputter : UdonSharpBehaviour
     {
-        [HelpBox("動作にはImageLoaderが必要です", HelpBoxAttribute.MessageType.Info, order = -1)]
-        [SerializeField, Header("入力フォームUI")] private VRCUrlInputField urlInput;
-        [SerializeField, Header("メッセージ出力先UI")] private Text messageTextUI;
+        [SerializeField] private VRCUrlInputField urlInput;
+        [SerializeField] private Text messageTextUI;
 
         private ImageLoader imageLoader;
         public void SetMessage(string str) => messageTextUI.text = str;

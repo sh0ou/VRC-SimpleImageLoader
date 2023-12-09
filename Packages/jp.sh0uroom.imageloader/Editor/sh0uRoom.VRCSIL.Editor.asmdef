@@ -1,0 +1,19 @@
+{
+    "name": "sh0uRoom.VRCSIL.Editor",
+    "rootNamespace": "sh0uRoom.VRCSIL",
+    "references": [
+        "GUID:452e02ecd24030f4897aea10caf5a5bf",
+        "GUID:84265b35cca3905448e623ef3903f0ff"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

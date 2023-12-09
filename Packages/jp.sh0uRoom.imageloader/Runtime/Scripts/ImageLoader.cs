@@ -2,7 +2,6 @@
 using UnityEngine;
 using VRC.SDK3.Image;
 using VRC.SDKBase;
-using VRC.SDKBase.Editor.Attributes;
 using VRC.Udon.Common.Interfaces;
 
 namespace sh0uRoom.VRCSIL
@@ -14,11 +13,10 @@ namespace sh0uRoom.VRCSIL
     /// </summary>
     public class ImageLoader : UdonSharpBehaviour
     {
-        [HelpBox("一部URLはユーザー側で\"Allow Untrasted URL\"を有効にする必要があります\n取得できる画像の種類・制限事項は右上のヘルプマーク(?)から確認できます", HelpBoxAttribute.MessageType.Info, order = -1)]
-        [SerializeField, UdonSynced(UdonSyncMode.None), Header("取得先URL")] public VRCUrl targetUrl;
-        [SerializeField, Header("出力先マテリアル")] private Material material;
-        [SerializeField, Header("開始時自動ロード")] private bool isLoadOnStart = true;
-        [SerializeField, Header("(オプション)状態出力スクリプト")] private ImageURLInputter inputter;
+        [SerializeField, UdonSynced(UdonSyncMode.None)] public VRCUrl targetUrl;
+        [SerializeField] private Material material;
+        [SerializeField] private bool isLoadOnStart = true;
+        [SerializeField] private ImageURLInputter inputter;
 
         private VRCImageDownloader imageDownloader;
         private IVRCImageDownload downloadTask;
@@ -39,7 +37,7 @@ namespace sh0uRoom.VRCSIL
             // ダウンロードの進捗を表示
             if (downloadTask != null)
             {
-                UpdateMessage($"取得中...:{downloadTask.State}({(downloadTask.Progress * 100).ToString("F2")}%)");
+                UpdateMessage($"取得中...:{downloadTask.State}({(downloadTask.Progress * 100).ToString("F2")}%)", true);
             }
         }
 
@@ -72,9 +70,16 @@ namespace sh0uRoom.VRCSIL
 
         /// <summary> メッセージを更新する </summary>
         /// <param name="str">メッセージの内容</param>
-        private void UpdateMessage(string str)
+        private void UpdateMessage(string str, bool isUpdate = false)
         {
-            inputter.SetMessage(str);
+            if (inputter != null)
+            {
+                inputter.SetMessage(str);
+            }
+            else if (!isUpdate)
+            {
+                Debug.Log($"[<color=yellow>{nameof(ImageLoader)}</color>]{str}");
+            }
         }
 
         #region VRCMethods
